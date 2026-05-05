@@ -3,28 +3,27 @@ namespace Casher_System;
 
 class Program
 {
-    static double taxRate = 0.14; // Global Variable
+    static double taxRate = 0.14; 
 
     static void Main(string[] args)
     {
         Console.WriteLine("----------------------------------------------------------------------------");
         PrintWelcome();
         Console.WriteLine("----------------------------------------------------------------------------");
-        double price; // غيرناها لـ double عشان الفلوس
+        double price; 
         int quantity;
 
-        // بعتنا الرسالة اللي عايزينها تظهر كـ Parameter للميثود
+        
         price = GetValidNumber("Enter Product Price: ");
         Console.WriteLine("----------------------------------------------------------------------------");
-        quantity = (int)GetValidNumber("Enter Product Quantity: "); // عملنا cast لـ int لأن الكمية دايما رقم صحيح
+        quantity = (int)GetValidNumber("Enter Product Quantity: "); 
 
         Console.WriteLine("----------------------------------------------------------------------------");
 
-        // استقبلنا القيمة اللي راجعة من الميثود
+       
         double subTotal = CalculateSubTotal(price, quantity);
         Console.WriteLine("Total Price (Before Tax): " + subTotal);
 
-        // التعديل الرياضي: المجموع + (المجموع * نسبة الضريبة)
         double finalTotal = subTotal + (subTotal * taxRate);
         Console.WriteLine("Final Total (After Tax): " + finalTotal);
         Console.WriteLine("----------------------------------------------------------------------------");
@@ -41,7 +40,7 @@ class Program
         return TotalPrice;
     }
 
-    // خلينا الميثود تاخد text كبارامتر عشان نطبع الرسالة الصح لكل حالة
+    
     static double GetValidNumber(string promptMessage)
     {
         double number;
@@ -49,7 +48,7 @@ class Program
 
         do
         {
-            Console.Write(promptMessage); // هيطبع الرسالة اللي اتبعتتله من الـ Main
+            Console.Write(promptMessage); 
             number = double.Parse(Console.ReadLine());
 
             if (number > 0)
